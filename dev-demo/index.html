@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Tag</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            margin: 20px auto;
+            max-width: 600px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input,
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>前端功能展示页面</h1>
+    </header>
+
+    <div class="container">
+        <h2>动态表单示例</h2>
+        <p>输入一个数字并点击按钮展示结果：</p>
+        <input type="number" id="numberInput" placeholder="请输入一个数字">
+        <button onclick="calculateSquare()">计算平方值</button>
+        <div class="result" id="resultArea">结果将在此显示</div>
+    </div>
+
+    <div class="container">
+        <h2>时间展示</h2>
+        <p>点击按钮查看当前时间：</p>
+        <button onclick="showTime()">显示当前时间</button>
+        <div class="result" id="timeDisplay">时间将在此显示</div>
+    </div>
+
+    <ai-element>
+        <span hidden>All your generated html will be inserted here.</span>
+    </ai-element>
+
+    <script>
+        function calculateSquare() {
+            const input = document.getElementById('numberInput').value;
+            const resultArea = document.getElementById('resultArea');
+            if (input) {
+                const square = input * input;
+                resultArea.textContent = `结果：${input} 的平方是 ${square}`;
+            } else {
+                resultArea.textContent = '请输入有效的数字！';
+            }
+        }
+
+        function showTime() {
+            const now = new Date();
+            const timeDisplay = document.getElementById('timeDisplay');
+            timeDisplay.textContent = `当前时间：${now.toLocaleTimeString()}`;
+        }
+    </script>
+    <script src="ai-tag-shadow.js"></script>
+
+</body>
+
+</html>
